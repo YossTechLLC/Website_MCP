@@ -70,9 +70,28 @@ async def health_check():
     }
 
 
-# TODO: Include API routers
-# from app.api.v1 import api_router
-# app.include_router(api_router, prefix="/api/v1")
+# Include API routers
+from app.api.v1.api import api_router
+app.include_router(api_router, prefix="/api/v1")
+
+# Startup and shutdown events
+@app.on_event("startup")
+async def startup_event():
+    """Initialize services on startup"""
+    from app.db.database import init_db
+    logger.info("Application starting up...")
+    # Uncomment to auto-create tables (use migrations in production)
+    # await init_db()
+    logger.info("Application startup complete")
+
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    """Cleanup on shutdown"""
+    from app.db.database import close_db
+    logger.info("Application shutting down...")
+    await close_db()
+    logger.info("Application shutdown complete")
 
 
 if __name__ == "__main__":
