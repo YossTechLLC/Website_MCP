@@ -5,7 +5,7 @@
 set -e
 
 # Configuration
-PROJECT_ID="your-gcp-project-id"  # CHANGE THIS
+PROJECT_ID="website-mcp"
 REGION="us-central1"
 SERVICE_NAME="mcp-test-paygate-web"
 BACKEND_SERVICE_NAME="mcp-test-paygate-api"
@@ -23,7 +23,7 @@ cd ../frontend
 # Create .env for build
 cat > .env.production <<EOF
 VITE_API_URL=$BACKEND_URL
-VITE_RECAPTCHA_SITE_KEY=YOUR_RECAPTCHA_SITE_KEY
+VITE_RECAPTCHA_SITE_KEY=6LfTFPkrAAAAADyZpCIe8Op8s6L3QvVZea0TRpT2
 EOF
 
 # Build and deploy with Cloud Build

@@ -5,7 +5,7 @@
 set -e
 
 # Configuration
-PROJECT_ID="your-gcp-project-id"  # CHANGE THIS
+PROJECT_ID="website-mcp"
 DB_INSTANCE_NAME="mcp-test-paygate-db"
 DB_NAME="paygate_prime"
 DB_USER="paygate_user"

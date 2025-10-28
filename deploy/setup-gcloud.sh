@@ -6,7 +6,7 @@
 set -e  # Exit on error
 
 # Configuration
-PROJECT_ID="your-gcp-project-id"  # CHANGE THIS
+PROJECT_ID="website-mcp"
 REGION="us-central1"
 DB_INSTANCE_NAME="mcp-test-paygate-db"
 DB_NAME="paygate_prime"

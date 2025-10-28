@@ -5,7 +5,7 @@
 set -e
 
 # Configuration
-PROJECT_ID="your-gcp-project-id"  # CHANGE THIS
+PROJECT_ID="website-mcp"
 REGION="us-central1"
 SERVICE_NAME="mcp-test-paygate-api"
 DB_INSTANCE_NAME="mcp-test-paygate-db"
@@ -35,7 +35,7 @@ gcloud run deploy $SERVICE_NAME \
     --set-env-vars="DB_USER=$DB_USER" \
     --set-env-vars="DB_PASSWORD=$DB_PASSWORD" \
     --set-env-vars="SECRET_KEY=$(openssl rand -base64 32)" \
-    --set-env-vars="RECAPTCHA_SECRET_KEY=YOUR_RECAPTCHA_SECRET_KEY" \
+    --set-env-vars="RECAPTCHA_SECRET_KEY=6LfTFPkrAAAAADyZpCIe8Op8s6L3QvVZea0TRpT2" \
     --set-env-vars="RECAPTCHA_THRESHOLD=0.5" \
     --set-env-vars="RATE_LIMIT_ENABLED=true" \
     --set-env-vars="ENVIRONMENT=production" \
