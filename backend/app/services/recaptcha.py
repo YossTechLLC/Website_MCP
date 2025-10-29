@@ -1,6 +1,7 @@
 """
 Google reCAPTCHA v3 Integration
 """
+from typing import Optional
 import httpx
 from app.core.config import settings
 import logging
@@ -54,5 +55,3 @@ class RecaptchaService:
             # In case of error, you might want to fail closed (return False)
             # or fail open (return True) depending on your security requirements
             return False, 0.0  # Fail closed
-
-from typing import Optional

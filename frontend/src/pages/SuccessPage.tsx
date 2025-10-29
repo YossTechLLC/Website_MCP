@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+import { CheckCircleIcon, RocketLaunchIcon } from '@heroicons/react/24/outline'
 import { RegistrationResponse } from '../types'
 
 interface Props {
@@ -7,35 +9,43 @@ interface Props {
 
 const SuccessPage = ({ data, onReset }: Props) => {
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 via-white to-blue-50">
       <div className="max-w-3xl mx-auto">
         {/* Success Icon */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-4">
-            <svg
-              className="w-12 h-12 text-green-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
+        <motion.div
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ type: 'spring', duration: 0.8 }}
+          className="text-center mb-8"
+        >
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full mb-4 shadow-2xl">
+            <CheckCircleIcon className="w-16 h-16 text-white" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-2"
+          >
             Registration Successful!
-          </h1>
-          <p className="text-lg text-gray-600">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-lg text-gray-600"
+          >
             Your channel has been registered with PayGate Prime
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Registration Details Card */}
-        <div className="bg-white rounded-lg shadow-sm p-8 mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="bg-white rounded-2xl shadow-xl p-8 mb-6 border border-gray-100"
+        >
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
             Registration Details
           </h2>
@@ -100,11 +110,17 @@ const SuccessPage = ({ data, onReset }: Props) => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Next Steps Card */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200 rounded-2xl p-6 mb-6 shadow-lg"
+        >
+          <h3 className="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <RocketLaunchIcon className="w-6 h-6 text-blue-600" />
             What's Next?
           </h3>
           <ol className="space-y-3 text-gray-700">
@@ -141,10 +157,15 @@ const SuccessPage = ({ data, onReset }: Props) => {
               </span>
             </li>
           </ol>
-        </div>
+        </motion.div>
 
         {/* Important Notes */}
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="bg-gradient-to-br from-yellow-50 to-orange-50 border border-yellow-200 rounded-2xl p-6 mb-8 shadow-lg"
+        >
           <h3 className="text-lg font-semibold text-gray-900 mb-2 flex items-center">
             <svg
               className="w-5 h-5 text-yellow-600 mr-2"
@@ -177,21 +198,30 @@ const SuccessPage = ({ data, onReset }: Props) => {
               <span>Payments will be processed automatically to your specified wallet address.</span>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={onReset}
-            className="inline-flex justify-center items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+            className="inline-flex justify-center items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all"
           >
             Register Another Channel
-          </button>
-          <a
+          </motion.button>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="https://t.me/paygateprime"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+            className="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all shadow-lg"
           >
             <svg
               className="w-5 h-5 mr-2"
@@ -201,13 +231,18 @@ const SuccessPage = ({ data, onReset }: Props) => {
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.654-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z" />
             </svg>
             Contact Support
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
 
         {/* Footer Note */}
-        <p className="text-center text-sm text-gray-500 mt-8">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="text-center text-sm text-gray-500 mt-8"
+        >
           Thank you for choosing PayGate Prime for your channel monetization needs!
-        </p>
+        </motion.p>
       </div>
     </div>
   )

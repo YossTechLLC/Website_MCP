@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_install",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_network_requests",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_close",
+      "Bash(tree:*)",
+      "Bash(python3 -m venv:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: Initialize PayGate Prime backend foundation\n\n- Create comprehensive project structure\n- Add FastAPI backend skeleton with security headers\n- Implement database models (Channel Registration, Network Mappings)\n- Add Pydantic schemas for validation\n- Create configuration management with environment variables\n- Add requirements.txt with all necessary dependencies\n- Create comprehensive documentation (README, TECH_STACK, Checklist)\n- Add .gitignore for Python/Node projects\n- Set up proper directory structure for backend/frontend\n\nTechnology Stack:\n- Backend: FastAPI + SQLAlchemy + PostgreSQL\n- Frontend: React + TypeScript + Vite (to be implemented)\n- Security: reCAPTCHA v3, rate limiting, CORS\n- Deployment: Google Cloud Platform\n\n🤖 Generated with Claude Code\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)",
+      "Bash(chmod:*)",
+      "Bash(gcloud --version:*)",
+      "Bash(gcloud config set:*)",
+      "Bash(gcloud config:*)",
+      "Bash(bash:*)",
+      "Bash(gcloud auth:*)",
+      "Bash(git push:*)",
+      "Bash(gcloud components reinstall:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python3 -m pip install:*)",
+      "Bash(sudo apt-get install:*)",
+      "Bash(yes:*)",
+      "Bash(gcloud builds list:*)",
+      "Bash(docker build:*)",
+      "Bash(gcloud alpha builds list:*)",
+      "Bash(gcloud logging read:*)",
+      "Bash(pip3 search:*)",
+      "Bash(curl:*)",
+      "Bash(npm install)",
+      "Bash(npm run build:*)",
+      "Bash(gcloud builds submit:*)",
+      "Bash(gcloud run deploy:*)",
+      "Bash(cat:*)",
+      "Bash(alembic revision:*)",
+      "Bash(python3:*)",
+      "Bash(find:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7"
+  ]
+}

@@ -103,7 +103,6 @@ const RegistrationForm = ({ onSuccess }: Props) => {
     handleSubmit,
     formState: { errors, isSubmitting },
     setValue,
-    watch,
   } = useForm<FormData>({
     resolver: zodResolver(registrationSchema),
     defaultValues: {

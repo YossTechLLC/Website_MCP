@@ -75,6 +75,14 @@ export const api = {
     const response = await apiClient.get('/api/v1/health')
     return response.data
   },
+
+  /**
+   * Direct axios methods for custom requests
+   */
+  post: apiClient.post.bind(apiClient),
+  get: apiClient.get.bind(apiClient),
+  put: apiClient.put.bind(apiClient),
+  delete: apiClient.delete.bind(apiClient),
 }
 
 export default api

@@ -10,7 +10,7 @@ asyncpg==0.29.0
 psycopg2-binary==2.9.9
 
 # Google Cloud
-google-cloud-sql-connector[asyncpg]==1.7.0
+cloud-sql-python-connector[asyncpg]==1.11.0
 google-cloud-secret-manager==2.17.0
 
 # Security
@@ -39,5 +39,5 @@ black==23.12.1
 flake8==7.0.0
 mypy==1.8.0
 
-# CORS
-python-cors==1.0.0
+# CORS (built-in with FastAPI)
+# No additional package needed
